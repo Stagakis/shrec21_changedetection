@@ -9,7 +9,7 @@ PCL
 Liblas
 For matlab, the 2020a version is used, although there will probably be no problems with newer/older versions.
 
-##Runing the program
+## Runing the program
 The program is divided in two parts:
 The preprocessing script "setup.sh" processes he pointclouds. This needs to be run once.
 The run.sh script performs the classification and displayes the confusion matrix.
