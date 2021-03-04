@@ -601,7 +601,8 @@ end
 
 % save(place,'corre')
 end
-confusionchart(true_labels, predicted_labels)
+writecell(true_labels, "true.txt")
+writecell(predicted_labels, "predicted.txt")
 
 % save test
 % load test
