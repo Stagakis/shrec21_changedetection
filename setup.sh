@@ -14,6 +14,6 @@ make
 cd ..
 cd ..
 
-cd gerasimos_shrec
+cd matlab_shrec
 /usr/local/MATLAB/R2020a/bin/matlab -nodisplay -nosplash -nodesktop -r "addpath('.');rehash;point_coud_registration_v2;exit;"
 cd ..
