@@ -256,11 +256,11 @@ int main (int argc, char **argv)
         Dataset::just_save_files = true;
     }
     else {
-        parseColumnFile("../../gerasimos_shrec/place.txt", places);
-        parseColumnFile("../../gerasimos_shrec/model.txt", models);
-        parseColumnFile("../../gerasimos_shrec/index.txt", indeces);
-        parseColumnFile("../../gerasimos_shrec/predicted.txt", predicted);
-        parseColumnFile("../../gerasimos_shrec/true.txt", true_labels);
+        parseColumnFile("../../matlab_shrec/place.txt", places);
+        parseColumnFile("../../matlab_shrec/model.txt", models);
+        parseColumnFile("../../matlab_shrec/index.txt", indeces);
+        parseColumnFile("../../matlab_shrec/predicted.txt", predicted);
+        parseColumnFile("../../matlab_shrec/true.txt", true_labels);
     }
 
     std::map<std::string, std::vector<float>> label_distances={
@@ -346,7 +346,7 @@ int main (int argc, char **argv)
     }
     if(Dataset::just_save_files) return 0;
     ofstream myfile;
-    myfile.open ("../../gerasimos_shrec/my_predicted.txt");
+    myfile.open ("../../matlab_shrec/my_predicted.txt");
     for(int i = 0; i < my_predicted.size(); i++){
         myfile<<my_predicted[i] << "\n";
     }
