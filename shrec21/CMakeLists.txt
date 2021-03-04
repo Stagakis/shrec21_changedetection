@@ -16,7 +16,7 @@ find_package(PCL REQUIRED)
 find_package(libLAS REQUIRED)
 #find_package( OpenCV REQUIRED )
 
-add_executable(${SOLUTIONTITLE}   ${FILES_SRC} src/main_bin.cpp include/filenames.h include/utils.h)
+add_executable(${SOLUTIONTITLE}   ${FILES_SRC} include/filenames.h include/utils.h)
 
 include_directories( ${CMAKE_SOURCE_DIR}/include/)
 include_directories( ${CMAKE_SOURCE_DIR})
