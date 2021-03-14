@@ -7,11 +7,13 @@ files_old = '/2016/';
 files_new = '/2020/';
 true_labels = [];
 predicted_labels = [];
+places = [];
 scenes = dir(path); %'extracted_las_files/'
 create_figures = 0;
 
 for scene = 3:length(scenes) %start from 3 to get past "." and ".." directories
 place = scenes(scene).name
+places = [places; {place}]
 %place = '16_5D4KVT48/';
 
 median = strcat(path,place);
@@ -595,13 +597,14 @@ end
 % corre(file,4) = max(edges2);
 
 end
-       clearvars -except all_labels create_figures true_labels predicted_labels scenes scene labels point_of_interest oldvertices_listing_sort all_information newvertices_listing_sort path files_old files_new place median path_old path_new oldvertices_listing newvertices_listing lengthoflist file corre
+       clearvars -except places all_labels create_figures true_labels predicted_labels scenes scene labels point_of_interest oldvertices_listing_sort all_information newvertices_listing_sort path files_old files_new place median path_old path_new oldvertices_listing newvertices_listing lengthoflist file corre
 
 end
 
 % save(place,'corre')
 end
 writecell(true_labels, "true.txt")
+writecell(places, "place.txt")
 writecell(predicted_labels, "predicted.txt")
 
 % save test

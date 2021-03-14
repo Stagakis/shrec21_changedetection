@@ -21,6 +21,20 @@ using namespace boost::filesystem;
 std::string Dataset::out_dir =  "";
 bool Dataset::just_save_files = false;
 
+
+int list_folders(std::string path, std::vector<std::string> &fnames)
+{
+    directory_iterator end_itr;
+    for (directory_iterator itr(path); itr != end_itr; ++itr)
+    {
+        if (!is_regular_file(itr->path())) {
+            size_t lastindex = itr->path().filename().string().find_last_of(".");
+            fnames.push_back(itr->path().filename().string().substr(0, lastindex));
+        }
+    }
+    std::sort(fnames.begin(), fnames.end());
+}
+
 int list_files(std::string path, std::vector<std::string> &fnames)
 {
     directory_iterator end_itr;

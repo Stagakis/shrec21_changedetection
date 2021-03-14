@@ -26,7 +26,8 @@
 #include <fstream>  // std::ifstream
 #include <iostream> // std::cout
 
-
+int list_files(std::string path, std::vector<std::string> &fnames);
+int list_folders(std::string path, std::vector<std::string> &fnames);
 typedef pcl::PointXYZRGB Point3D;
 typedef pcl::PointCloud<Point3D> PointCloud3D;
 

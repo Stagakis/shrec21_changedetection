@@ -238,7 +238,7 @@ void parseIniFile(const std::string& filename, std::string & out_dir){
         if(keyword == "out_dir")
             out_dir = line.substr(end+1,std::string::npos);
     }
-    out_dir = out_dir.substr(1, out_dir.size() - 1);
+    out_dir = out_dir.substr(1, out_dir.size() - 2);
 }
 
 
@@ -251,6 +251,10 @@ int main (int argc, char **argv)
     std::vector<std::string> true_labels = std::vector<std::string>();
     std::vector<int> indeces = std::vector<int>();
     parseIniFile("../../ChangeDetectionDatasetViewer/config.ini", Dataset::out_dir);
+
+    std::vector<std::string> scene_folders;
+    list_folders(Dataset::out_dir +"/", scene_folders);
+
     if(argc > 1) {
         std::cout << "Converting LAS files to PLY" << std::endl;
         Dataset::just_save_files = true;
@@ -278,7 +282,7 @@ int main (int argc, char **argv)
     //pcl::console::setVerbosityLevel(pcl::console::L_ALWAYS);
     std::vector<std::string> scene_filenames;
     if(Dataset::just_save_files)
-        scene_filenames = scene_filenames_ordered;
+        scene_filenames = scene_folders;
     else
         scene_filenames = places;
     int count = 0;
