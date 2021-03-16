@@ -16,7 +16,7 @@ The preprocessing script "setup.sh" processes the pointclouds. This needs to be 
 
 ### Classification
 The run.sh script performs the classification and displays the confusion matrix.  
-The confusion.sh script just displays the confusion matrix based on the results of run.sh without performing any classification. If you execute the script right after you clone the repository, you should be able to see our results based on the train dataset.
+The confusion.sh script just displays the confusion matrix based on the results of run.sh without performing the classification. It essentially displays the results of the most recent run.
 
 All of these scripts .sh must be edited to provide the correct path of the matlab executable program.  
 Config.ini must also be edited in the same way as the ChangeDetectionDatasetViewer, but with the added "out_dir" field needed for both our scripts. This path is where our scripts will save and read any intermediate files.
