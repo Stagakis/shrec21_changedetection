@@ -1,5 +1,8 @@
 # shrec21_changedetection
 
+This work is done for the SHREC2021 change detection challenge, more info on the challenge is found here: https://kutao207.github.io/
+The publication related to the outcome of this work is found here: https://www.sciencedirect.com/science/article/pii/S0097849321001369
+
 ## Dependencies
 The project uses a combination of python, c++ and matlab.  
 The python dependencies are essentially the same as the original ChangeDetectionDatasetViewer repo.  
